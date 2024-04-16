@@ -1,13 +1,7 @@
 <?php
 include 'template/header.php';
 include 'template/sidebar.php';
-
-$servername = "localhost";
-$database = "poliban";
-$username = "root";
-$password = "";
-
-$conn = mysqli_connect($servername, $username, $password, $database);
+require 'koneksi.php';
 
 $query = "SELECT * FROM mahasiswa JOIN prodi ON mahasiswa.id_prodi = prodi.id_prodi";
 $hasil = mysqli_query($conn, $query);
@@ -46,17 +40,11 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Responsive Hover Table</h3>
+              <h3 class="card-title">Data Mahasiswa</h3>
 
               <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                  <div class="input-group-append">
-                    <button type="submit" class="btn btn-default">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
+              <div class="card-tools">
+              <a href="tambahmahasiswa.php" class="btn btn-primary">Tambah</a>
                 </div>
               </div>
             </div>
@@ -77,18 +65,19 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
                 </thead>
                 <tbody>
                   <?php
+                  $i = 1;
                   foreach ($data as $d) {
                   ?>
                     <tr>
-                      <td></td>
-                      <td><?php echo $d['Nim'] ?></td>
-                      <td><?php echo $d['Nama'] ?>
-                      <td><?php echo $d['Nama_Prodi'] ?>
-                      <td><?php echo $d['No_Hp'] ?>
-                      <td><?php echo $d['Alamat'] ?></td>
-                      <td><?php echo $d['Foto'] ?></td>
-                      <td><a href="" class="btn btn-warning" >Edit</a>
-                    <a href="" class="btn btn-danger" >Hapus</a>
+                      <td><?php echo $i++ ?></td>
+                      <td><?php echo $d['nim'] ?></td>
+                      <td><?php echo $d['nama'] ?>
+                      <td><?php echo $d['nama_prodi'] ?>
+                      <td><?php echo $d['no_hp'] ?>
+                      <td><?php echo $d['alamat'] ?></td>
+                      <td> <img src="dist/img/<?php echo $d['foto'] ?>" width="50px" height="50px" /> </td>
+                      <td><a href="editmahasiswa.php?nim=<?= $d['nim'] ?>" class="btn btn-warning" >Edit</a>
+                    <a href="hapusmahasiswa.php?nim=<?= $d['nim'] ?>" class="btn btn-danger" >Hapus</a>
                     </td>
                     </tr>
                   <?php } ?>

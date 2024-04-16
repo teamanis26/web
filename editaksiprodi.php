@@ -1,7 +1,7 @@
 <?php
 require 'koneksi.php';
 $id =$_POST['ID_Prodi'];
-$prodi = $_POST['namaprodi'];
+$prodi = $_POST['NamaProdi'];
 
 $query ="UPDATE prodi SET nama_prodi='$prodi' WHERE id_prodi='$id'";
 
