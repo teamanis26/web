@@ -1,4 +1,7 @@
 <?php
+session_start();
+require 'Koneksi.php';
+ceklogin();
 include 'template/header.php';
 include 'template/sidebar.php';
 ?>

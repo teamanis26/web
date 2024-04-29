@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Poliban</span>
+      <span class="brand-text font-weight-light">AdminLTE</span>
     </a>
 
     <!-- Sidebar -->
@@ -10,49 +10,51 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/<?=$_SESSION['foto'];?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">shinta</a>
+          <a href="#" class="d-block"><?= $_SESSION['nama']; ?></a>
         </div>
       </div>
 
-     
+      
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-               <li class="nav-header">
-          <li class="nav-item">
-            <a href="Dashboard.php" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+               <li class="nav-item">
+            <a href="index.php" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
               <p>
                 Dashboard
-                <span class="badge badge-info right"></span>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
-          <li class="nav-header">
           <li class="nav-item">
-            <a href="Mahasiswa.php" class="nav-link">
+            <a href="mahasiswa.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Data Mahasiswa
-                <span class="badge badge-info right"></span>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="Prodi.php" class="nav-link">
+            <a href="prodi.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Data Prodi
               </p>
             </a>
-
+          </li>
+         
+              </p>
+            </a>
+          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

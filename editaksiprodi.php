@@ -1,5 +1,7 @@
 <?php
+session_start();
 require 'koneksi.php';
+ceklogin();
 $id =$_POST['ID_Prodi'];
 $prodi = $_POST['NamaProdi'];
 
