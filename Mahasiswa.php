@@ -2,6 +2,8 @@
 session_start();
 require 'Koneksi.php';
 ceklogin();
+cekadmin();
+
 include 'template/header.php';
 include 'template/sidebar.php';
 
@@ -143,7 +145,7 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="dist/js/poliban.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

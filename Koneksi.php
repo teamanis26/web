@@ -12,3 +12,10 @@ function ceklogin() {
     }
     
 }
+
+function cekadmin(){
+    if ($_SESSION['hakakses'] != 'admin'){
+        header("Location: index.php");
+    }
+}
+    

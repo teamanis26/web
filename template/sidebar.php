@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE</span>
+      <span class="brand-text font-weight-light">POLIBAN</span>
     </a>
 
     <!-- Sidebar -->
@@ -33,6 +33,8 @@
               </p>
             </a>
           </li>
+          <?php if ($_SESSION['hakakses'] == 'admin'){ ?>
+          <li class="nav-item">
           <li class="nav-item">
             <a href="mahasiswa.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -42,6 +44,7 @@
               </p>
             </a>
           </li>
+          <?php } ?>
           <li class="nav-item">
             <a href="prodi.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
